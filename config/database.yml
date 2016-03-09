@@ -7,7 +7,6 @@ development:
   <<: *default
   username: root
   password: mindfire
-  host: localhost
   database: reachtvGoogleWebAdmin
 
 # Warning: The database defined as "test" will be erased and
@@ -22,7 +21,6 @@ test:
 
 production:
   <<: *default
-  username: root
-  password: mindfire
-  host: localhost
+  username: postgres
+  password: 
   database: reachtvGoogleWebAdmin
