@@ -1,0 +1,21 @@
+<%= form_for @advideo, :html => { :multipart => true } do |f| %>
+  <% if @advideo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@advideo.errors.count, "error") %> prohibited this advideo from being saved:</h2>
+
+      <ul>
+      <% @advideo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :file %>
+    <%= f.file_field :file %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

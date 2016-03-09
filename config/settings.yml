@@ -1,0 +1,11 @@
+default: &default
+  cloud_storage:
+    bucket: reachtv-1238
+    access_key_id: GOOG26OLRNZRABYFTH6H
+    secret_access_key: 2qKM2kPEldRQ7iaHsJa9CtcrHKOJRl8qT3auo+8i
+
+development:
+  <<: *default
+
+production:
+  <<: *default

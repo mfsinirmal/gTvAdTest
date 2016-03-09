@@ -1,0 +1,2 @@
+module AdvideosHelper
+end

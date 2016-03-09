@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+<div class="media">
+  <!-- [START cover] -->
+  <div class="media-left">
+    <video width="320" height="240" controls>
+  	<source src="<%= @advideo['video_url'] %>" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+  </div>
+  <!-- [END cover] -->
+</div>
+<%= link_to 'Edit', edit_advideo_path(@advideo) %> |
+<%= link_to 'Back', advideos_path %>

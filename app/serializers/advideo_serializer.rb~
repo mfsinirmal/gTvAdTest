@@ -1,0 +1,3 @@
+class AdvideoSerializer < ActiveModel::Serializer
+  attributes :id
+end
