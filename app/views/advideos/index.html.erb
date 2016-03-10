@@ -16,14 +16,12 @@
     <% @advideos.each do |advideo| %>
       <tr>
 	<td>	
-	  <video width="320" height="240" controls>
+	  <video width="180" height="180" controls>
   	    <source src="<%= advideo['video_url'] %>" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </td>
         <td><%= link_to 'Show', advideo %></td>
-        <td><%= link_to 'Edit', edit_advideo_path(advideo) %></td>
-        <td><%= link_to 'Destroy', advideo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

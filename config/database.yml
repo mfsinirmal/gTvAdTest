@@ -1,26 +1,30 @@
 default: &default
   adapter: postgresql
+  encoding: unicode  
   pool: 5
   timeout: 5000
 
 development:
   <<: *default
-  username: root
+  host: localhost
+  username: pguser
   password: mindfire
-  database: reachtvGoogleWebAdmin
+  database: reachtvGoogleWebAdmin_dev
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  username: root
-  password: mindfire
   host: localhost
-  database: reachtvGoogleWebAdmin
+  username: pguser
+  password: mindfire
+  database: reachtvGoogleWebAdmin_test
 
 production:
   <<: *default
-  username: postgres
-  password: 
-  database: reachtvGoogleWebAdmin
+  host: localhost
+  username: pguser
+  password: mindfire
+  database: reachtvGoogleWebAdmin_prod
+
