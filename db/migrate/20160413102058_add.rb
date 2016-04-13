@@ -1,7 +1,5 @@
 class Add < ActiveRecord::Migration
   def change
-   update_table :advideos do |t|
-      t.string hls_url
-    end
+    add_column :advideos, :hls_url, :string
   end
 end
