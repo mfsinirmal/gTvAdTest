@@ -4,7 +4,11 @@ Rails.application.routes.draw do
 
   namespace :api, :defaults => {:format => :json} do
    namespace :v1 do
-     resources :advideos 
+     resources :advideos do
+      collection do     
+       post 'registerappsdk'
+      end     
+     end 
    end
   end
 

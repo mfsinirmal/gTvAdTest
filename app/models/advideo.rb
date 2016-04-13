@@ -13,8 +13,8 @@ class Advideo < ActiveRecord::Base
     )
 
     video.save
-    self.video_url = video.public_url
-
+    self.video_url = video.public_url.sub! 'https://reachtv-1238.storage.googleapis.com', 'http://cdn.reachtv.co'
+    # self.video_url = video.public_url
     save
   end
 
