@@ -4,7 +4,6 @@ class Api::V1::DevicesController < ApplicationController
    @device = Device.where(:udid=>params[:udid]).where(:appId=>params[:appId]).where(:sdkKey=>params[:sdkKey]).first
    if @device
       render json: @device, status: :created, location: @device
-   end
    else
    	  @device = Device.new
    	  @device.udid = params[:udid]
