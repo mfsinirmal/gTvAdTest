@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :devices, except: [:new, :edit]
   resources :advideos
   root 'advideos#index'
 
@@ -6,9 +7,14 @@ Rails.application.routes.draw do
    namespace :v1 do
      resources :advideos do
       collection do     
-       post 'showvideos'
+       post 'display_videos'
       end     
-     end 
+     end
+     resources :devices do
+       collection do
+         post 'register_new_device'
+       end
+     end
    end
   end
 

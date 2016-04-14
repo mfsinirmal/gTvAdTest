@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  udid: MyString
+  appId: MyString
+  sdkKey: MyString
+  authToken: MyString
+  expireOn: MyString
+
+two:
+  udid: MyString
+  appId: MyString
+  sdkKey: MyString
+  authToken: MyString
+  expireOn: MyString
