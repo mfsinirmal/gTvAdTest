@@ -5,7 +5,7 @@ class Api::V1::AdvideosController < ApplicationController
   end
 
   def display_videos     
-     if params[:no_of_videos]
+     if params.has_key?(:no_of_videos)
        @advideo = Advideo.last(params[:no_of_videos])
        @advideo.hls_url  = @advideo.video_url
        @advideo.hls_url  = @advideo.hls_url.sub! 'https://reachtv-1238.storage.googleapis.com', 'http://hls.reachtv.co'
