@@ -9,14 +9,14 @@ class Api::V1::AdvideosController < ApplicationController
        @advideo = Advideo.last(params[:no_of_videos])
        @advideo.each do |video|
          v_url = video.video_url
-         v_url.sub 'http://cdn.reachtv.co', 'http://hls.reachtv.co'
+         v_url = v_url.sub 'http://cdn.reachtv.co', 'http://hls.reachtv.co'
          v_url = v_url + ".m3u8"
          video.hls_url = v_url   
        end               
      else
        @advideo = Advideo.last
          v_url = @advideo.video_url
-         v_url.sub! 'http://cdn.reachtv.co', 'http://hls.reachtv.co'
+         v_url = v_url.sub 'http://cdn.reachtv.co', 'http://hls.reachtv.co'
          v_url = v_url + ".m3u8"
          @advideo.hls_url = v_url              
      end
