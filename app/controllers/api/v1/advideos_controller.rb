@@ -7,16 +7,14 @@ class Api::V1::AdvideosController < ApplicationController
   def display_videos     
      if params.has_key?(:no_of_videos)
        @advideo = Advideo.last(params[:no_of_videos])
-       @advideo.hls_url  = @advideo.video_url
-       @advideo.hls_url  = @advideo.hls_url.sub! 'https://reachtv-1238.storage.googleapis.com', 'http://hls.reachtv.co'
-       @advideo.hls_url  = @advideo.hls_url.sub! 'http://cdn.reachtv.co', 'http://hls.reachtv.co'
-       @advideo.hls_url = @advideo.hls_url + ".m3u8"       
      else
        @advideo = Advideo.last
-       @advideo.hls_url  = @advideo.video_url
-       @advideo.hls_url  = @advideo.hls_url.sub! 'https://reachtv-1238.storage.googleapis.com', 'http://hls.reachtv.co'
-       @advideo.hls_url  = @advideo.hls_url.sub! 'http://cdn.reachtv.co', 'http://hls.reachtv.co'       
-       @advideo.hls_url = @advideo.hls_url + ".m3u8"
+     end
+     @advideo.each do |i|
+       @advideo[i]["hls_url"] = @advideo[i]["video_url"]
+       @advideo[i]["hls_url"] = @advideo[i]["hls_url"].sub! 'https://reachtv-1238.storage.googleapis.com', 'http://hls.reachtv.co'
+       @advideo[i]["hls_url"] = @advideo[i]["hls_url"].sub! 'http://cdn.reachtv.co', 'http://hls.reachtv.co'
+       @advideo[i]["hls_url"] = @advideo[i]["hls_url"] + ".m3u8"              
      end 
      # @advideo = Advideo.new    
      # @advideo.id = 60
