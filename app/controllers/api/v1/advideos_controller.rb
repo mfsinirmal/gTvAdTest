@@ -29,8 +29,8 @@ class Api::V1::AdvideosController < ApplicationController
   
   
   def video_played_summary
-    @adVideoId = params[:video_id]
-    @adVideoLen = params [:lengthPlayed]
-    render json: "success"
+    @adVideo = Advideo.find params[:id]
+    @adVideoLen = params[:length_played]
+    render json: "{advideo':{'message': 'Dummy API call succeeful'}}"  
   end
 end
