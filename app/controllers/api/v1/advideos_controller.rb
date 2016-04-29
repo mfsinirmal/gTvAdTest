@@ -26,4 +26,11 @@ class Api::V1::AdvideosController < ApplicationController
      # @advideo.hls_url = "http://hls.reachtv.co/ad_videos/60/100_0101.mp4.m3u8"    
      render json: @advideo
   end 
+  
+  
+  def video_played_summary
+    @adVideoId = params[:video_id]
+    @adVideoLen = params [:lengthPlayed]
+    render json: "success"
+  end
 end

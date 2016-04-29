@@ -8,6 +8,7 @@ Rails.application.routes.draw do
      resources :advideos do
       collection do     
        post 'display_videos'
+       post 'video_played_summary'
       end     
      end
      resources :devices do
