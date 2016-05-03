@@ -1,0 +1,75 @@
+=== puma startup: 2016-05-03 13:52:17 +0000 ===
+Rails Error: Unable to access log file. Please ensure that /var/www/gTvAdTest/log/production.log exists and is writable (ie, make it writable for user and group: chmod 0664 /var/www/gTvAdTest/log/production.log). The log level has been raised to WARN and the output directed to STDERR until the problem is fixed.
+Rails Error: Unable to access log file. Please ensure that /var/www/gTvAdTest/log/production.log exists and is writable (ie, make it writable for user and group: chmod 0664 /var/www/gTvAdTest/log/production.log). The log level has been raised to WARN and the output directed to STDERR until the problem is fixed.
+=== puma startup: 2016-05-03 13:52:58 +0000 ===
+Rails Error: Unable to access log file. Please ensure that /var/www/gTvAdTest/log/production.log exists and is writable (ie, make it writable for user and group: chmod 0664 /var/www/gTvAdTest/log/production.log). The log level has been raised to WARN and the output directed to STDERR until the problem is fixed.
+Rails Error: Unable to access log file. Please ensure that /var/www/gTvAdTest/log/production.log exists and is writable (ie, make it writable for user and group: chmod 0664 /var/www/gTvAdTest/log/production.log). The log level has been raised to WARN and the output directed to STDERR until the problem is fixed.
+Started GET "/" for 111.93.220.154 at 2016-05-03 13:53:11 +0000
+Processing by AdvideosController#index as HTML
+  [1m[36mAdvideo Load (7.6ms)[0m  [1mSELECT "advideos".* FROM "advideos"[0m
+  Rendered advideos/index.html.erb within layouts/application (35.3ms)
+Completed 200 OK in 45ms (Views: 21.0ms | ActiveRecord: 23.2ms)
+Started POST "/api/v1/advideos/video_played_summary" for 111.93.220.154 at 2016-05-03 13:53:48 +0000
+Processing by Api::V1::AdvideosController#video_played_summary as JSON
+  Parameters: {"authToken"=>"1111111111", "id"=>"65", "length_played"=>"0.5"}
+Can't verify CSRF token authenticity
+  [1m[35mAdvideo Load (0.4ms)[0m  SELECT  "advideos".* FROM "advideos" WHERE "advideos"."id" = $1 LIMIT 1  [["id", 65]]
+Completed 200 OK in 12ms (Views: 1.8ms | ActiveRecord: 0.7ms)
+=== puma startup: 2016-05-03 13:55:27 +0000 ===
+Rails Error: Unable to access log file. Please ensure that /var/www/gTvAdTest/log/production.log exists and is writable (ie, make it writable for user and group: chmod 0664 /var/www/gTvAdTest/log/production.log). The log level has been raised to WARN and the output directed to STDERR until the problem is fixed.
+Rails Error: Unable to access log file. Please ensure that /var/www/gTvAdTest/log/production.log exists and is writable (ie, make it writable for user and group: chmod 0664 /var/www/gTvAdTest/log/production.log). The log level has been raised to WARN and the output directed to STDERR until the problem is fixed.
+Started GET "/" for 111.93.220.154 at 2016-05-03 13:55:35 +0000
+Processing by AdvideosController#index as HTML
+  [1m[36mAdvideo Load (0.7ms)[0m  [1mSELECT "advideos".* FROM "advideos"[0m
+  Rendered advideos/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 20ms (Views: 15.2ms | ActiveRecord: 3.3ms)
+Started POST "/api/v1/devices/register_new_device" for 103.245.117.222 at 2016-05-03 13:56:05 +0000
+Processing by Api::V1::DevicesController#register_new_device as JSON
+  Parameters: {"appId"=>"com.mindfire.ReachTVAd", "udid"=>"285F1A0F-924B-44A3-9906-530A144FEB90", "sdkKey"=>"testAppKey", "device"=>{"udid"=>"285F1A0F-924B-44A3-9906-530A144FEB90", "appId"=>"com.mindfire.ReachTVAd", "sdkKey"=>"testAppKey"}}
+Can't verify CSRF token authenticity
+  [1m[35mDevice Load (7.5ms)[0m  SELECT  "devices".* FROM "devices" WHERE "devices"."udid" = $1 AND "devices"."appId" = $2 AND "devices"."sdkKey" = $3  ORDER BY "devices"."id" ASC LIMIT 1  [["udid", "285F1A0F-924B-44A3-9906-530A144FEB90"], ["appId", "com.mindfire.ReachTVAd"], ["sdkKey", "testAppKey"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (6.5ms)[0m  INSERT INTO "devices" ("udid", "appId", "sdkKey", "authToken", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["udid", "285F1A0F-924B-44A3-9906-530A144FEB90"], ["appId", "com.mindfire.ReachTVAd"], ["sdkKey", "testAppKey"], ["authToken", "azds12344"], ["created_at", "2016-05-03 13:56:06.002674"], ["updated_at", "2016-05-03 13:56:06.002674"]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+Completed 201 Created in 30ms (Views: 1.2ms | ActiveRecord: 16.7ms)
+Started POST "/api/v1/advideos/display_videos" for 103.245.117.222 at 2016-05-03 13:56:06 +0000
+Processing by Api::V1::AdvideosController#display_videos as JSON
+  Parameters: {"authToken"=>"azds12344", "no_of_videos"=>1, "advideo"=>{}}
+Can't verify CSRF token authenticity
+  [1m[36mAdvideo Load (0.5ms)[0m  [1mSELECT  "advideos".* FROM "advideos"  ORDER BY "advideos"."id" DESC LIMIT 1[0m
+Completed 200 OK in 10ms (Views: 0.8ms | ActiveRecord: 3.6ms)
+=== puma startup: 2016-05-03 13:58:58 +0000 ===
+Rails Error: Unable to access log file. Please ensure that /var/www/gTvAdTest/log/production.log exists and is writable (ie, make it writable for user and group: chmod 0664 /var/www/gTvAdTest/log/production.log). The log level has been raised to WARN and the output directed to STDERR until the problem is fixed.
+Rails Error: Unable to access log file. Please ensure that /var/www/gTvAdTest/log/production.log exists and is writable (ie, make it writable for user and group: chmod 0664 /var/www/gTvAdTest/log/production.log). The log level has been raised to WARN and the output directed to STDERR until the problem is fixed.
+Started GET "/" for 111.93.220.154 at 2016-05-03 13:59:04 +0000
+Processing by AdvideosController#index as HTML
+  [1m[36mAdvideo Load (0.6ms)[0m  [1mSELECT "advideos".* FROM "advideos"[0m
+  Rendered advideos/index.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 20ms (Views: 15.9ms | ActiveRecord: 3.2ms)
+Started POST "/api/v1/devices/register_new_device" for 103.245.117.222 at 2016-05-03 14:00:11 +0000
+Processing by Api::V1::DevicesController#register_new_device as JSON
+  Parameters: {"appId"=>"com.mindfire.ReachTVAd", "udid"=>"FD66C926-91AF-4881-A2D9-A11C284EAEDA", "sdkKey"=>"testAppKey", "device"=>{"udid"=>"FD66C926-91AF-4881-A2D9-A11C284EAEDA", "appId"=>"com.mindfire.ReachTVAd", "sdkKey"=>"testAppKey"}}
+Can't verify CSRF token authenticity
+  [1m[35mDevice Load (0.5ms)[0m  SELECT  "devices".* FROM "devices" WHERE "devices"."udid" = $1 AND "devices"."appId" = $2 AND "devices"."sdkKey" = $3  ORDER BY "devices"."id" ASC LIMIT 1  [["udid", "FD66C926-91AF-4881-A2D9-A11C284EAEDA"], ["appId", "com.mindfire.ReachTVAd"], ["sdkKey", "testAppKey"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "devices" ("udid", "appId", "sdkKey", "authToken", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["udid", "FD66C926-91AF-4881-A2D9-A11C284EAEDA"], ["appId", "com.mindfire.ReachTVAd"], ["sdkKey", "testAppKey"], ["authToken", "azds12344"], ["created_at", "2016-05-03 14:00:11.137087"], ["updated_at", "2016-05-03 14:00:11.137087"]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+Completed 201 Created in 17ms (Views: 1.2ms | ActiveRecord: 3.9ms)
+Started POST "/api/v1/advideos/display_videos" for 103.245.117.222 at 2016-05-03 14:00:11 +0000
+Processing by Api::V1::AdvideosController#display_videos as JSON
+  Parameters: {"authToken"=>"azds12344", "no_of_videos"=>1, "advideo"=>{}}
+Can't verify CSRF token authenticity
+  [1m[35mAdvideo Load (0.4ms)[0m  SELECT  "advideos".* FROM "advideos"  ORDER BY "advideos"."id" DESC LIMIT 1
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+Started POST "/api/v1/advideos/display_videos" for 103.245.117.222 at 2016-05-03 14:00:23 +0000
+Processing by Api::V1::AdvideosController#display_videos as JSON
+  Parameters: {"authToken"=>"azds12344", "no_of_videos"=>1, "advideo"=>{}}
+Can't verify CSRF token authenticity
+  [1m[36mAdvideo Load (0.4ms)[0m  [1mSELECT  "advideos".* FROM "advideos"  ORDER BY "advideos"."id" DESC LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+Started POST "/api/v1/advideos/video_played_summary" for 103.245.117.222 at 2016-05-03 14:00:28 +0000
+Processing by Api::V1::AdvideosController#video_played_summary as JSON
+  Parameters: {"id"=>65, "length_played"=>65, "authToken"=>"azds12344", "advideo"=>{"id"=>65}}
+Can't verify CSRF token authenticity
+  [1m[36mAdvideo Load (0.4ms)[0m  [1mSELECT  "advideos".* FROM "advideos" WHERE "advideos"."id" = $1 LIMIT 1[0m  [["id", 65]]
+Completed 200 OK in 13ms (Views: 1.5ms | ActiveRecord: 3.7ms)
